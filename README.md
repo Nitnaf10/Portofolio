@@ -1,1 +1,1 @@
-This is just my (Bio)[nitnaf10.github.io/Portofolio]
+This is just my [Bio](nitnaf10.github.io/Portofolio)
