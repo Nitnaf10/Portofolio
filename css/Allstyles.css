@@ -1,0 +1,256 @@
+/*-----Fonts-------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cairo+Play:wght@200..1000&family=Cairo:wght@200..1000&display=swap");
+
+/*-----Initialisation-------------------------*/
+
+:root {
+  --black: #000000ff;
+  --pakistan-green: #004000ff;
+  --office-green: #008000ff;
+  --mantis: #80c080ff;
+  --tea-green: #c0e0c0ff;
+  --white: #ffffffff;
+  --jordy-blue: #80b8ffff;
+  --brandeis-blue: #0070ffff;
+  --yale-blue: #003880ff;
+  --dark-green: #002000ff;
+  --dartmouth-green: #006000ff;
+  --pigment-green: #40a040ff;
+  --honeydew: #e0f0e0ff;
+  --oxford-blue: #001c40ff;
+  --sapphire: #0054c0ff;
+  --azure: #2082ffff;
+  --dodger-blue: #4094ffff;
+  --uranian-blue: #c0dcffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 1s ease;
+  overflow-x: hidden;
+}
+
+.animopen:before,
+.animopen:after,
+.animopen,
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.animopen {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/*-----Menu-------------------------*/
+
+header {
+  background-color: #181823;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#menu > * {
+  padding: 10px;
+  padding-bottom: 0px;
+  flex: 1;
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+  flex: 1;
+}
+
+#menu > a{
+  position: relative;
+}
+
+#menu > a:after{
+  transition: 0.4s ease;
+  content: "";
+  background-color: #fff;
+  display: block;
+  width: 50%;
+  height: 2px;
+  transform: translate(0) scaleX(0);
+} 
+
+#menu > a:hover:after{
+  transform: translate(50%) scaleX(1);
+}
+
+
+#menu > a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transition: 0.3s ease;
+}
+
+#menu > a:hover:before {
+  transform: scaleX(1)
+}
+
+header h1 {
+  font-family: "Arvo", serif;
+  text-align: right;
+  color: white;
+  font-size: 5vw;
+  margin: 20px 0;
+  padding-left: 25vw;
+  padding: 5vw;
+  background-image: url(../image/background.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*-----Section-------------------------*/
+
+section > h2 {
+  font-size: 5vw;
+  position: absolute;
+  transform: rotate(-90deg) translate(-20vw,-12vw);
+}
+
+section {
+  padding: 1em;
+  margin: 1em;
+  margin-left: 5vw;
+}
+
+/*-----Footer-------------------------*/
+
+footer {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  margin-top: 1em;
+  padding: 20px;
+  color: white;
+  background-color: var(--pigment-green);
+  width: 100vw;
+  padding-bottom: 30px;
+}
+
+/*-----Project-------------------------*/
+
+#projectslist {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Project1 Project2 Project3"
+    "Project1 Project4 Project5";
+}
+
+.Project1 {
+  grid-area: Project1;
+}
+.Project2 {
+  grid-area: Project2;
+}
+.Project3 {
+  grid-area: Project3;
+}
+.Project4 {
+  grid-area: Project4;
+}
+.Project5 {
+  grid-area: Project5;
+}
+
+#projectslist > a {
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1em;
+  text-decoration: none;
+  box-shadow: 0 4px 30px #0001;
+  border: 1px solid fffc;
+  color: black;
+}
+
+#projectslist > a * {
+  margin: 5px;
+}
+
+#projectslist > a img {
+  width: 100%;
+}
+
+/*-----Start-Animations-------------------------*/
+
+.animopen {
+  transition: none;
+  animation: anim 5s;
+  width: 0;
+  height: 0;
+}
+
+.animopen:before,
+.animopen:after {
+  box-sizing: border-box;
+  content: "";
+}
+
+.animopen:before {
+  right: -50vw;
+  border-right: 50vw solid transparent;
+  border-bottom: 101vh solid var(--azure);
+  animation: animbefore 5s;
+}
+
+.animopen:after {
+  left: -50vw;
+  border-left: 50vw solid transparent;
+  border-top: 101vh solid var(--brandeis-blue);
+  animation: animafter 5s;
+}
+
+/*-----Animations-------------------------*/
+
+@keyframes animbefore {
+  0% {
+    transform: translateX(-25vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes animafter {
+  0% {
+    transform: translateX(75vw);
+  }
+  100% {
+    transform: translateX(150vw);
+  }
+}
+
+@keyframes anim {
+  from {
+    width: 100vw;
+    height: 100vh;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+  }
+}
