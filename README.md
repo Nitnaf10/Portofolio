@@ -1,1 +1,1 @@
-This is just my [Bio](https://nitnaf10.github.io/Portofolio)
+This is just my [Bio](https://nitnaf10.github.io/Portofolio)! :joy:
